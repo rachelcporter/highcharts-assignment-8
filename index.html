@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Crime Rates and Population in Jacksonville, Florida </title>
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px|PT+Sans+Narrow" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/newCrime.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/themes/dark-unica.js"></script>
+  <script src="https://code.highcharts.com/modules.exporting.js"></script>
+</head>
+<body>
+
+<header>
+<h1> Crime Rates and Population in Jacksonville, Florida</h1>
+<p> By Rachel Porter </p>
+</header>
+
+<article id="crimeRates">
+<h2> Crime Rates Across Florida </h2>
+<p> The following chart compares violent crime rates across cities in Florida. The data was taken in 2017 as reported by police officers. The data reports that Jacksonville, Florida has  the highest violent crime rate compared to the other cities. According to Neighborhood Scout's website, Jacksonville has one of the highest violent crime rates in the nation. They also found that Jacksonville is only safer than 9% of US cities. In Jacksonville, your chance of being involved in a violent crime is 1 in 158 people, comparatively, your chance of being involved in a violent crime in the state of Florida is 1 in 232 people.</p>
+
+<p><a href="https://www.neighborhoodscout.com/fl/jacksonville/crime">Information from NeighborhoodScout.com</a></p>
+
+  <!-- add the div and the chart code BELOW this comment -->
+<div id="container"></div>
+  <!-- the 'container' DIV must be EMPTY -->
+<script>
+Highcharts.chart('container', {
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: 'Violent Crime Rates in 2017'
+  },
+  subtitle: {
+    text: 'Source: ucr.fbi.gov'
+  },
+  xAxis: {
+    categories: [
+      'Jacksonville',
+      'Miami',
+      'Gainesville',
+      'Fort Lauderdale',
+      'Tallahassee',
+      'Tampa',
+      'Orlando'
+    ],
+    crosshair: true
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Number of Crimes'
+    }
+  },
+  tooltip: {
+    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+      '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+    footerFormat: '</table>',
+    shared: true,
+    useHTML: true
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0
+    }
+  },
+  series: [{
+    name: 'Violent Crime',
+    data: [2696, 1665, 472, 523, 891, 904, 1000]
+  }]
+});
+</script>
+
+<p><a
+  href="https://ucr.fbi.gov/crime-in-the-u.s/2017/preliminary-report/tables/table-4/state-cuts/colorado-through-hawaii.xls"> Data from FBI.gov</a></p>
+
+<article id="populationSize">
+<h2> Population Size in Jacksonville </h2>
+
+<p>As seen from data above the violent crime rate in Jacksonville is the highest among cities in Florida. However, the data above also shows that Jacksonville has one of the highest populations in Florida. Of the cities listed above, Jacksonville had the largest population. Population relates to the previous chart on number of recorded crimes because the cities recorded each had populations of 100,000 peopole of more. The chart below shows the population size change from 2010 to 2017, according to data collected from the US census bureau. </p>
+
+<div id="newcontainer"></div>
+
+<script>
+Highcharts.chart('newcontainer', {
+    chart: {
+        type: 'spline'
+    },
+    title: {
+        text: 'Population Change in Jacksonville, Florida (2010-2017)'
+    },
+    subtitle: {
+        text: 'Source: factfinder.census.gov'
+    },
+    xAxis: {
+        categories: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017']
+    },
+    yAxis: {
+        title: {
+            text: 'Population Size'
+        },
+        labels: {
+            formatter: function () {
+                return this.value + '';
+            }
+        }
+    },
+    tooltip: {
+        crosshairs: true,
+        shared: true
+    },
+    plotOptions: {
+        spline: {
+            marker: {
+                radius: 4,
+                lineColor: '#666666',
+                lineWidth: 1
+            }
+        }
+    },
+    series: [{
+        name: 'Jacksonville',
+        marker: {
+            symbol: 'square'
+        },
+        data: [823175, 829685,	837439,	843383,	853479,	866856,	880893,	892062]
+
+    }]
+});
+</script>
+
+<p><a
+  href="https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?src=bkmk"> Data from Census.gov</a></p>
+  <!-- DO NOT write anything below these required tags /18 -->
+</body>
+</html>

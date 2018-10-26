@@ -1,0 +1,67 @@
+html {
+box-sizing: border-box;
+}
+*{
+  box-sizing:inherit;
+}
+body {
+    font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+    color: #fff;
+    background: #006778;
+    text-align: left;
+    margin: 0;
+    line-height: 1.5rem;
+}
+h1 {
+  font-family: 'Slabo 27px', 'Georgia', serif;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0 1rem;
+  margin: 0;
+  line-height: 2.5rem;
+  text-align: left;
+}
+h2{
+  font-family: 'Slabo 27px', 'Georgia', serif;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: left;
+}
+header {
+  padding: 1rem 2rem;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #9F792C;
+  line-height: 2rem;
+}
+article {
+  max-width: 100%;
+}
+#crimeRates {
+  padding: 2rem;
+  text-align: left;
+}
+#populationSize {
+  padding: 2rem;
+  text-align: left;
+}
+#container {
+  border: 2px solid #9F792C;
+  display: flex;
+}
+#newcontainer {
+  border: 2px solid #9F792C;
+  display: flex;
+}
+a {
+    color: #0AFF27;
+}
+a:hover {
+    color: #82E8FF;
+}
+
+@media screen and (max-width: 750px) {
+  
+}
